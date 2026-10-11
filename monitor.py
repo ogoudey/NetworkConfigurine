@@ -411,7 +411,7 @@ def run_tui(cfg_path):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(description="Live status of the nodes in network_config.json")
-    ap.add_argument("config", nargs="?", default="network_config.json", help="default: %(default)s")
+    ap.add_argument("config", nargs="?", default="subnets/network_config.json", help="default: %(default)s")
     ap.add_argument("--once", action="store_true", help="check once, print, and exit")
     ap.add_argument("--no-color", action="store_true", help="plain text output with --once")
     args = ap.parse_args(argv)
