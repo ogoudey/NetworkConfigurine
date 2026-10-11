@@ -1,20 +1,8 @@
-# netmon
+# Network Configurine (netmon)
 
 A tiny terminal dashboard for a handful of machines, plus a tiny status server
 that runs on each of them. Pure Python standard library (3.7+): nothing to
 `pip install`, on either side.
-
-```
- netmon network_config.json   3/4 reachable · 2/4 servers up   checked 13:42:10 · every 10s
-
-  P S  NODE          HOST                PING      SERVER
-  ● ●  olin-desktop  192.168.1.20:8765   0.41 ms   ok  up 2d
-       ├─ ● myproject   v1.2.0-3-gabc1234  main  2026-10-01
-       ├─ ● dotfiles    @9f2c1e0           main  2026-09-28  uncommitted changes
-       └─ ● webapp      0.4.1 @d1f5351     dev   2026-10-10
-  ● ●  pi            192.168.1.31:8765   3.2 ms    refused — server not running?
-  ● ●  nas           nas.local:9000      no reply  timeout
-```
 
 ## Files
 
@@ -28,7 +16,7 @@ that runs on each of them. Pure Python standard library (3.7+): nothing to
 
 ---
 
-## 1. The dashboard (on your machine)
+## 1. The dashboard (on local machine)
 
 ```bash
 cp network_config.example.json network_config.json   # then edit hosts
@@ -114,7 +102,7 @@ python3 node_setup.py --list
 python3 node_setup.py --add ~/Projects/foo ~/Desktop/bar --remove oldproj --name pi --port 8765
 ```
 
-### Notes
+### Notes (??)
 
 * **Firewall:** the dashboard machine must be able to reach the node's port (default 8765),
   e.g. `sudo ufw allow 8765/tcp`.
